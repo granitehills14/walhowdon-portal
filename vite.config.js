@@ -1,7 +1,13 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
+  base: '/walhowdon-portal/',
   plugins: [react()],
-  base: 'https://github.com/granitehills14/walhowdon-portal'
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
 });
