@@ -31,8 +31,8 @@
             osmUrl ='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
             osmAttrib ='Base Map <a href="http://openstreetmap.org">OpenStreetMap</a> contributers',
             osm = new L.TileLayer(osmUrl, {
-                minZoom: 12,
-                maxZoom: 19,
+                minZoom: 15,
+                maxZoom: 24,
                 attribution: osmAttrib
             }).addTo(mymap);
             mymap.setView([43.627439,-72.219422],18);
