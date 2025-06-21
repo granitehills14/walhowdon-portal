@@ -1,13 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Walhowdon Viewer</title>
-    <script type="module" crossorigin src="./assets/index-ByFXh7HP.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CIGW-MKW.css">
+    <title>Walhowdon Data Portal</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/@mapbox/leaflet-pip@latest/leaflet-pip.js" ></script>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-easybutton@2.0.0/src/easy-button.css">
+    <script src="https://unpkg.com/leaflet-easybutton@2.0.0/src/easy-button.js"></script>
+    <script src="https://use.fontawesome.com/42c987363b.js"></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html,
+        body,
+        #mapid {
+            height: 100%;
+            width: 100%
+        }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="mapid"></div>
+    <script>
+        // initialize map in div id="mapid" element
+        var mymap = L.map('mapid'),
+            osmUrl ='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            osmAttrib ='Base Map <a href="http://openstreetmap.org">OpenStreetMap</a> contributers',
+            osm = new L.TileLayer(osmUrl, {
+                minZoom: 12,
+                maxZoom: 19,
+                attribution: osmAttrib
+            }).addTo(mymap);
+            mymap.setView([43.627439,-72.219422],14);
+    </script>
   </body>
-</html>
